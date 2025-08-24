@@ -5,10 +5,10 @@
       "type": "hero",
       "settings": {}
     },
-    // "gift_guide": {
-    //   "type": "gift-guide",
-    //   "settings": {}
-    // }
+    "gift_guide": {
+      "type": "gift-guide",
+      "settings": {}
+    }
   },
   "order": ["hero", "gift_guide"]
 }

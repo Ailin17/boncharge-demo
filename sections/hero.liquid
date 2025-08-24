@@ -1,6 +1,14 @@
 {{ 'sections.hero.css' | asset_url | stylesheet_tag }}
 
-<section class="hero" style="background-image: url('{{ section.settings.background_image | image_url: '2048x' }}');">
+<section class="hero">
+  {%-
+    render 'tool.picture' with {
+    image: section.settings.background_image | image_url: '2048x',
+    class: 'hero__image responsive-image is-mobile',
+    width: 750,
+    sizes: '320,375,500'
+    }
+  -%}
   <div class="hero__overlay">
     <div class="container hero__content">
       <h1 class="hero__heading">{{ section.settings.heading }}</h1>
