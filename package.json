@@ -5,11 +5,11 @@
     "sass": "^1.90.0"
   },
   "scripts": {
-  "build:css": "sass assets/styles/main.scss assets/styles/main.css --no-source-map",
-  "watch:css": "sass --watch assets/styles/main.scss assets/styles/main.css --no-source-map",
-  "build:js": "esbuild assets/scripts/main.ts --bundle --outdir=assets/scripts/dist --platform=browser --format=esm --minify",
-  "watch:js": "esbuild assets/scripts/main.ts --bundle --outdir=assets/scripts/dist --platform=browser --format=esm --watch",
-  "build": "run-p build:*",
-  "watch": "run-p watch:*"
+    "build:css": "sass styles/main.scss assets/main.css --no-source-map",
+    "watch:css": "sass --watch styles/main.scss assets/main.css --no-source-map",
+    "build:js": "esbuild scripts/main.ts --bundle --outdir=assets --platform=browser --format=esm --minify",
+    "watch:js": "esbuild scripts/main.ts --bundle --outdir=assets --platform=browser --format=esm --watch",
+    "build": "run-p build:*",
+    "watch": "run-p watch:*"
   }
 }
