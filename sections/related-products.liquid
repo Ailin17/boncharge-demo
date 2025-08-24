@@ -1,9 +1,9 @@
-{{ 'component-card.css' | asset_url | stylesheet_tag }}
-{{ 'component-price.css' | asset_url | stylesheet_tag }}
-{{ 'section-related-products.css' | asset_url | stylesheet_tag }}
+{{ 'dawn/component-card.css' | asset_url | stylesheet_tag }}
+{{ 'dawn/component-price.css' | asset_url | stylesheet_tag }}
+{{ 'dawn/section-related-products.css' | asset_url | stylesheet_tag }}
 
 {% if section.settings.image_shape == 'blob' %}
-  {{ 'mask-blobs.css' | asset_url | stylesheet_tag }}
+  {{ 'dawn/mask-blobs.css' | asset_url | stylesheet_tag }}
 {%- endif -%}
 
 {%- style -%}
@@ -134,7 +134,7 @@
           "value": "2",
           "label": "t:sections.related-products.settings.columns_mobile.options__2.label"
         }
-      ]    
+      ]
     },
     {
       "type": "color_scheme",

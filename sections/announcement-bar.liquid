@@ -1,5 +1,5 @@
-{{ 'component-slideshow.css' | asset_url | stylesheet_tag }}
-{{ 'component-slider.css' | asset_url | stylesheet_tag }}
+{{ 'dawn/component-slideshow.css' | asset_url | stylesheet_tag }}
+{{ 'dawn/component-slider.css' | asset_url | stylesheet_tag }}
 
 {%- liquid
   assign social_icons = true
@@ -15,7 +15,7 @@
 -%}
 
 {% if social_icons %}
-  {{ 'component-list-social.css' | asset_url | stylesheet_tag }}
+  {{ 'dawn/component-list-social.css' | asset_url | stylesheet_tag }}
 {% endif %}
 
 <div
@@ -127,7 +127,7 @@
         </div>
       </slideshow-component>
       {%- if request.design_mode -%}
-        <script src="{{ 'theme-editor.js' | asset_url }}" defer="defer"></script>
+        <script src="{{ 'dawn/theme-editor.js' | asset_url }}" defer="defer"></script>
         <style>
           /* theme editor power preview fix */
           .announcement-bar-slider .slider__slide[aria-hidden='true'] {
@@ -186,13 +186,13 @@
       "unit": "s",
       "label": "t:sections.announcement-bar.settings.change_slides_speed.label",
       "default": 5
-    },    
+    },
     {
       "type": "color_scheme",
       "id": "color_scheme",
       "label": "t:sections.all.colors.label",
       "default": "scheme-4"
-    },  
+    },
     {
       "type": "checkbox",
       "id": "show_line_separator",
@@ -205,8 +205,8 @@
     },
     {
       "type": "paragraph",
-         "content": "t:sections.announcement-bar.settings.paragraph.content"
-    },             
+      "content": "t:sections.announcement-bar.settings.paragraph.content"
+    },
     {
       "type": "checkbox",
       "id": "show_social",

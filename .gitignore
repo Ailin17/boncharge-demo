@@ -13,3 +13,6 @@ node_modules
 dist
 .npmrc
 config.yml
+/assets/scripts/dist
+main.css
+main.ts
