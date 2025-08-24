@@ -1,0 +1,48 @@
+@use '../main.scss' as *;
+
+.hero {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  padding: 6rem $space-sm;
+
+  &__overlay {
+    background: rgba($color-black, 0.4);
+    padding: 3rem 0;
+  }
+
+  &__content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    color: $color-white;
+    font-family: $font-base;
+  }
+
+  &__heading {
+    font-size: 3rem;
+    margin-bottom: $space-sm;
+    color: $color-red;
+    font-family: $font-heading;
+  }
+
+  &__subheading {
+    font-size: 1.25rem;
+    color: $color-white;
+  }
+
+  &__cta {
+    display: inline-block;
+    margin-top: $space-lg;
+    padding: 0.75rem 2rem;
+    background-color: $color-red;
+    color: $color-white;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: $radius-sm;
+
+    &:hover {
+      background-color: darken($color-red, 10%);
+    }
+  }
+}

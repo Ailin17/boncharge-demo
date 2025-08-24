@@ -1,0 +1,78 @@
+@use '../main.scss' as *;
+
+.gift-guide {
+  padding: $space-lg $space-sm;
+  background: $color-grey-light;
+
+  &__intro {
+    text-align: center;
+    margin-bottom: $space-lg;
+
+    &__heading {
+      font-size: 2.5rem;
+      font-family: $font-heading;
+      color: $color-red;
+      margin-bottom: $space-sm;
+    }
+
+    &__subheading {
+      font-size: 1.25rem;
+      font-family: $font-base;
+      color: $color-grey-dark;
+    }
+  }
+
+  &__blocks {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: $space-md;
+  }
+
+  &__product,
+  &__bundle {
+    background: $color-white;
+    padding: $space-md;
+    border-radius: $radius-sm;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba($color-black, 0.05);
+
+    img {
+      width: 100%;
+      border-radius: $radius-sm;
+      margin-bottom: $space-sm;
+    }
+
+    h3 {
+      font-family: $font-heading;
+      color: $color-grey-dark;
+      margin-bottom: $space-xs;
+    }
+
+    p {
+      font-family: $font-base;
+      color: $color-grey-dark;
+    }
+  }
+
+  &__quiz {
+    grid-column: 1 / -1;
+    text-align: center;
+    background: $color-white;
+    padding: $space-md;
+    border-radius: $radius-sm;
+
+    &-start {
+      margin-top: $space-sm;
+      padding: 0.5rem 2rem;
+      background-color: $color-red;
+      color: $color-white;
+      border: none;
+      border-radius: $radius-sm;
+      cursor: pointer;
+
+      &:hover {
+        background-color: $color-red;
+      }
+    }
+  }
+}

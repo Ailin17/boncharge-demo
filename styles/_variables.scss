@@ -1,4 +1,10 @@
-// Brand palette
+// Brand Colors
+$color-red: #d83c36;
+$color-white: #ffffff;
+$color-black: #000000;
+$color-grey-light: #f7f5f2;
+$color-grey-dark: hsl(0, 0%, 20%);
+
 $color-primary: #d83c36;
 $color-primary-dark: #b22f2a;
 $color-primary-light: #f25a53;
@@ -10,14 +16,17 @@ $color-neutral-800: #333333;
 $color-neutral-900: #000000;
 
 // Typography
-$font-family-base: 'Helvetica Neue',
-Arial,
+$font-base: 'Inter',
 sans-serif;
-$font-size-base: 16px;
+$font-heading: 'Montserrat',
+sans-serif;
 
-// Spacing scale
-$space-1: 0.25rem;
-$space-2: 0.5rem;
-$space-3: 1rem;
-$space-4: 1.5rem;
-$space-5: 2rem;
+// Spacing
+$space-xs: 0.5rem;
+$space-sm: 1rem;
+$space-md: 2rem;
+$space-lg: 4rem;
+
+// Border radius
+$radius-sm: 4px;
+$radius-md: 8px;

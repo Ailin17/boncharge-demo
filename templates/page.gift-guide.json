@@ -1,10 +1,14 @@
 {
   "name": "Gift Guide",
   "sections": {
-    "main": {
-      "type": "gift-guide",
+    "hero": {
+      "type": "hero",
       "settings": {}
-    }
+    },
+    // "gift_guide": {
+    //   "type": "gift-guide",
+    //   "settings": {}
+    // }
   },
-  "order": ["main"]
+  "order": ["hero", "gift_guide"]
 }

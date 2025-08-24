@@ -1,0 +1,82 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  color: #333333;
+  background-color: #ffffff;
+}
+
+a {
+  color: #d83c36;
+  text-decoration: none;
+}
+a:hover {
+  color: #b22f2a;
+}
+
+.gift-guide {
+  padding: 4rem 1rem;
+  background: #f7f5f2;
+}
+.gift-guide__intro {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+.gift-guide__intro__heading {
+  font-size: 2.5rem;
+  font-family: "Montserrat", sans-serif;
+  color: #d83c36;
+  margin-bottom: 1rem;
+}
+.gift-guide__intro__subheading {
+  font-size: 1.25rem;
+  font-family: "Inter", sans-serif;
+  color: hsl(0, 0%, 20%);
+}
+.gift-guide__blocks {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 2rem;
+}
+.gift-guide__product, .gift-guide__bundle {
+  background: #ffffff;
+  padding: 2rem;
+  border-radius: 4px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+.gift-guide__product img, .gift-guide__bundle img {
+  width: 100%;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+}
+.gift-guide__product h3, .gift-guide__bundle h3 {
+  font-family: "Montserrat", sans-serif;
+  color: hsl(0, 0%, 20%);
+  margin-bottom: 0.5rem;
+}
+.gift-guide__product p, .gift-guide__bundle p {
+  font-family: "Inter", sans-serif;
+  color: hsl(0, 0%, 20%);
+}
+.gift-guide__quiz {
+  grid-column: 1/-1;
+  text-align: center;
+  background: #ffffff;
+  padding: 2rem;
+  border-radius: 4px;
+}
+.gift-guide__quiz-start {
+  margin-top: 1rem;
+  padding: 0.5rem 2rem;
+  background-color: #d83c36;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.gift-guide__quiz-start:hover {
+  background-color: #d83c36;
+}

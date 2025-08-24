@@ -1,0 +1,55 @@
+{{ 'sections.hero.css' | asset_url | stylesheet_tag }}
+
+<section class="hero" style="background-image: url('{{ section.settings.background_image | image_url: '2048x' }}');">
+  <div class="hero__overlay">
+    <div class="container hero__content">
+      <h1 class="hero__heading">{{ section.settings.heading }}</h1>
+      <div class="hero__subheading">{{ section.settings.subheading }}</div>
+      {% if section.settings.cta_text != blank %}
+        <a href="{{ section.settings.cta_link }}" class="hero__cta">{{ section.settings.cta_text }}</a>
+      {% endif %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Hero",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Gift Guide 2025"
+    },
+    {
+      "type": "richtext",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "<p>Curated gifts for every occasion</p>"
+    },
+    {
+      "type": "image_picker",
+      "id": "background_image",
+      "label": "Background Image"
+    },
+    {
+      "type": "text",
+      "id": "cta_text",
+      "label": "CTA Text",
+      "default": "Shop Now"
+    },
+    {
+      "type": "url",
+      "id": "cta_link",
+      "label": "CTA Link",
+      "default": "/collections/all"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Hero"
+    }
+  ]
+}
+{% endschema %}
