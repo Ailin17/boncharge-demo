@@ -1,0 +1,55 @@
+@use '../main.scss'as *;
+
+.bundles {
+  padding: 2rem;
+  background-color: $color-primary-dark;
+
+  &__inner {
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  &__heading {
+    text-align: right;
+    font-size: 32px;
+    color: $color-white;
+    font-family: $font-heading;
+  }
+
+  &__slide {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  &__collection {
+    display: grid;
+    grid-template-columns: minmax(400px, 1fr);
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    align-content: center;
+    gap: 1rem;
+
+    .product-thumbnail__image-wrapper {
+      padding-top: 67%;
+    }
+
+    .product-thumbnail {
+      width: 100%;
+    }
+  }
+
+  @media (min-width: 769px) {
+    padding:2rem 2rem 6rem 2rem;
+    &__collection {
+      display: grid;
+      grid-template-columns: 400px 400px;
+      gap: 0;
+    }
+
+    &__heading {
+      font-size: 3rem;
+    }
+  }
+}

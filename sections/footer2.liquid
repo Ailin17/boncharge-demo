@@ -1,0 +1,43 @@
+{{ 'sections.footer.css' | asset_url | stylesheet_tag }}
+
+<footer class="site-footer">
+  <div class="site-footer__inner">
+    <div class="site-footer__col site-footer__col--brand">
+      <h2 class="site-footer__logo">MyShop</h2>
+      <p class="site-footer__tagline">Quality products, every day.</p>
+    </div>
+
+    <div class="site-footer__col site-footer__col--nav">
+      <h3 class="site-footer__heading">Shop</h3>
+      <ul class="site-footer__list">
+        <li><a href="#">New Arrivals</a></li>
+        <li><a href="#">Best Sellers</a></li>
+        <li><a href="#">Sale</a></li>
+        <li><a href="#">Bundles</a></li>
+      </ul>
+    </div>
+
+    <div class="site-footer__col site-footer__col--nav">
+      <h3 class="site-footer__heading">Company</h3>
+      <ul class="site-footer__list">
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Blog</a></li>
+        <li><a href="#">Careers</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </div>
+
+    <div class="site-footer__col site-footer__col--social">
+      <h3 class="site-footer__heading">Follow Us</h3>
+      <ul class="site-footer__social">
+        <li><a href="#">Facebook</a></li>
+        <li><a href="#">Instagram</a></li>
+        <li><a href="#">TikTok</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="site-footer__bottom">
+    <p>&copy; {{ 'now' | date: '%Y' }} MyShop. All rights reserved.</p>
+  </div>
+</footer>

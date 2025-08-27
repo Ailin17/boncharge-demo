@@ -27,8 +27,8 @@
     {% endif %}
 
     {% render 'meta-tags' %}
-    {{ 'styles/main.css' | asset_url | stylesheet_tag }}
-    <script type="module" src="{{ 'scripts/dist/main.js' | asset_url }}"></script>
+    {{ 'main.css' | asset_url | stylesheet_tag }}
+    <script type="module" src="{{ 'main.js' | asset_url }}"></script>
 
     <script src="{{ 'constants.js' | asset_url }}" defer="defer"></script>
     <script src="{{ 'pubsub.js' | asset_url }}" defer="defer"></script>
@@ -303,6 +303,12 @@
         document.documentElement.classList.add('shopify-design-mode');
       }
     </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap"
+      rel="stylesheet"
+    >
   </head>
 
   <body class="gradient{% if settings.animations_hover_elements != 'none' %} animate--hover-{{ settings.animations_hover_elements }}{% endif %}">
@@ -320,7 +326,7 @@
       {{ content_for_layout }}
     </main>
 
-    {% sections 'footer-group' %}
+    {% section 'footer2' %}
 
     <ul hidden>
       <li id="a11y-refresh-page-message">{{ 'accessibility.refresh_page' | t }}</li>

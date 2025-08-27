@@ -1,0 +1,27 @@
+.o-wave {
+  display: block;
+  width: 100%;
+  overflow: hidden;
+  transform: translateY(1px);
+  z-index: 20;
+
+  &__wave {
+    width: 100%;
+    display: block;
+    transition: transform 2s ease-out;
+
+    z-index: 20;
+
+    .o-wave.is-visible & {
+      transform: translateX(-50%);
+    }
+
+    .is-flipped & {
+      transform: rotate(180deg);
+    }
+
+    .o-wave.is-visible.is-flipped & {
+      transform: rotate(180deg) translateX(50%);
+    }
+  }
+}

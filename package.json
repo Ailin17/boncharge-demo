@@ -4,13 +4,17 @@
     "npm-run-all": "^4.1.5",
     "sass": "^1.90.0"
   },
-    "scripts": {
-      "build:main": "sass styles/main.scss assets/main.css --no-source-map",
-      "watch:main": "sass --watch styles/main.scss assets/main.css --no-source-map",
-      "build:sections": "for f in styles/sections/*.scss; do name=$(basename \"$f\" .scss); sass \"$f\" \"assets/sections.$name.css\" --no-source-map; done",
-      "watch:sections": "for f in styles/sections/*.scss; do name=$(basename \"$f\" .scss); sass --watch \"$f\":\"assets/sections.$name.css\" --no-source-map & done; wait",
-      "build": "run-p build:main build:sections",
-      "watch": "run-p watch:main watch:sections"
-    }
-  
+"scripts": {
+  "build:ts": "esbuild scripts/main.ts --bundle --minify --outfile=assets/main.js",
+  "watch:ts": "esbuild scripts/main.ts --bundle --minify --outfile=assets/main.js --watch",
+  "build:main": "sass styles/main.scss assets/main.css --no-source-map",
+  "watch:main": "sass --watch styles/main.scss assets/main.css --no-source-map",
+  "build:sections": "for f in styles/sections/*.scss; do name=$(basename \"$f\" .scss); sass \"$f\" \"assets/sections.$name.css\" --no-source-map; done",
+  "watch:sections": "for f in styles/sections/*.scss; do name=$(basename \"$f\" .scss); sass --watch \"$f\":\"assets/sections.$name.css\" --no-source-map & done; wait",
+  "build": "run-p build:main build:sections build:ts",
+  "watch": "run-p watch:main watch:sections watch:ts"
+},
+  "dependencies": {
+    "keen-slider": "^6.8.6"
+  }
 }

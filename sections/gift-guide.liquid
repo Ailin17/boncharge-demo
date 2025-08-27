@@ -1,42 +1,6 @@
 {{ 'sections.gift-guide.css' | asset_url | stylesheet_tag }}
 
-<section class="gift-guide">
-  <div class="gift-guide__intro">
-    <h2 class="gift-guide__heading">{{ section.settings.heading }}</h2>
-    <p class="gift-guide__subheading">{{ section.settings.subheading }}</p>
-  </div>
-
-  <div class="gift-guide__blocks">
-    {% for block in section.blocks %}
-      {% case block.type %}
-        {% when 'product' %}
-          <div class="gift-guide__product">
-            <img
-              src="{{ block.settings.image | image_url: '400x' }}"
-              height="800"
-              width="800"
-              alt="{{ block.settings.title }}"
-            >
-            <h3 class="gift-guide__product-title">{{ block.settings.title }}</h3>
-            <p class="gift-guide__product-price">{{ block.settings.price }}</p>
-          </div>
-
-        {% when 'bundle' %}
-          <div class="gift-guide__bundle">
-            <h3 class="gift-guide__bundle-title">{{ block.settings.title }}</h3>
-            <p class="gift-guide__bundle-items">{{ block.settings.items }}</p>
-            <p class="gift-guide__bundle-price">{{ block.settings.price }}</p>
-          </div>
-
-        {% when 'quiz' %}
-          <div class="gift-guide__quiz" id="gift-quiz">
-            <p>{{ block.settings.quiz_intro }}</p>
-            <button class="gift-guide__quiz-start" data-action="start-quiz">Start Quiz</button>
-          </div>
-      {% endcase %}
-    {% endfor %}
-  </div>
-</section>
+<section class="gift-guide"></section>
 
 {% schema %}
 {

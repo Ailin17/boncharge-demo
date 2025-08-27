@@ -1,7 +1,7 @@
 @use '../main.scss' as *;
 
 .gift-guide {
-  padding: $space-lg $space-sm;
+  // padding: $space-lg $space-sm;
   background: $color-grey-light;
 
   &__intro {
@@ -11,7 +11,7 @@
     &__heading {
       font-size: 2.5rem;
       font-family: $font-heading;
-      color: $color-red;
+      color: $color-primary;
       margin-bottom: $space-sm;
     }
 
@@ -64,14 +64,14 @@
     &-start {
       margin-top: $space-sm;
       padding: 0.5rem 2rem;
-      background-color: $color-red;
+      background-color: $color-primary;
       color: $color-white;
       border: none;
       border-radius: $radius-sm;
       cursor: pointer;
 
       &:hover {
-        background-color: $color-red;
+        background-color: $color-primary;
       }
     }
   }

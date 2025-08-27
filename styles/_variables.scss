@@ -5,9 +5,9 @@ $color-black: #000000;
 $color-grey-light: #f7f5f2;
 $color-grey-dark: hsl(0, 0%, 20%);
 
-$color-primary: #d83c36;
-$color-primary-dark: #b22f2a;
-$color-primary-light: #f25a53;
+$color-primary: #738678;
+$color-primary-dark: #4d5b50;
+$color-primary-light: #a4ccaf;
 
 $color-neutral-100: #ffffff;
 $color-neutral-200: #f8f8f8;
@@ -18,9 +18,8 @@ $color-neutral-900: #000000;
 // Typography
 $font-base: 'Inter',
 sans-serif;
-$font-heading: 'Montserrat',
-sans-serif;
-
+$font-heading: "Merriweather",
+serif;
 // Spacing
 $space-xs: 0.5rem;
 $space-sm: 1rem;

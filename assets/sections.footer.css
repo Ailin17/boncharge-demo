@@ -114,76 +114,83 @@ a:hover {
   background-color: #000000;
   color: #ffffff;
   border: none;
+  border-radius: 4px;
   padding: 0.5rem 2rem;
   cursor: pointer;
   font-weight: 600;
   transition: background-color 0.3s ease;
-  border-radius: 8px;
 }
 .product-thumbnail__button:hover {
   background-color: #4d5b50;
 }
 
-.gift-guide {
-  background: #f7f5f2;
+.site-footer {
+  background: #111;
+  color: #fff;
+  padding: 3rem 1rem;
+  font-size: 0.9rem;
 }
-.gift-guide__intro {
-  text-align: center;
-  margin-bottom: 4rem;
+.site-footer a {
+  color: #ccc;
+  text-decoration: none;
 }
-.gift-guide__intro__heading {
-  font-size: 2.5rem;
-  font-family: "Merriweather", serif;
-  color: #738678;
-  margin-bottom: 1rem;
+.site-footer a:hover {
+  color: #fff;
 }
-.gift-guide__intro__subheading {
-  font-size: 1.25rem;
-  font-family: "Inter", sans-serif;
-  color: hsl(0, 0%, 20%);
-}
-.gift-guide__blocks {
+.site-footer__inner {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
 }
-.gift-guide__product, .gift-guide__bundle {
-  background: #ffffff;
-  padding: 2rem;
-  border-radius: 4px;
-  text-align: center;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-}
-.gift-guide__product img, .gift-guide__bundle img {
-  width: 100%;
-  border-radius: 4px;
-  margin-bottom: 1rem;
-}
-.gift-guide__product h3, .gift-guide__bundle h3 {
-  font-family: "Merriweather", serif;
-  color: hsl(0, 0%, 20%);
+.site-footer__col--brand .site-footer__logo {
+  font-size: 1.5rem;
   margin-bottom: 0.5rem;
 }
-.gift-guide__product p, .gift-guide__bundle p {
-  font-family: "Inter", sans-serif;
-  color: hsl(0, 0%, 20%);
+.site-footer__col--brand .site-footer__tagline {
+  color: #aaa;
+  font-size: 0.85rem;
 }
-.gift-guide__quiz {
-  grid-column: 1/-1;
+.site-footer__col--nav .site-footer__heading {
+  font-weight: bold;
+  margin-bottom: 0.75rem;
+}
+.site-footer__col--nav .site-footer__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.site-footer__col--nav .site-footer__list li {
+  margin-bottom: 0.5rem;
+}
+.site-footer__col--social .site-footer__heading {
+  font-weight: bold;
+  margin-bottom: 0.75rem;
+}
+.site-footer__col--social .site-footer__social {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.site-footer__col--social .site-footer__social li {
+  margin-bottom: 0.5rem;
+}
+.site-footer__bottom {
+  margin-top: 2rem;
   text-align: center;
-  background: #ffffff;
-  padding: 2rem;
-  border-radius: 4px;
+  color: #777;
+  font-size: 0.8rem;
 }
-.gift-guide__quiz-start {
-  margin-top: 1rem;
-  padding: 0.5rem 2rem;
-  background-color: #738678;
-  color: #ffffff;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
+
+@media (max-width: 768px) {
+  .site-footer__inner {
+    grid-template-columns: 1fr 1fr;
+  }
 }
-.gift-guide__quiz-start:hover {
-  background-color: #738678;
+@media (max-width: 480px) {
+  .site-footer__inner {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
 }

@@ -12,7 +12,7 @@
     "hero": {
       "type": "hero",
       "settings": {
-        "heading": "Mother's Day Gift Guide 2025",
+        "heading": "Holiday Gift Guide 2025",
         "subheading": "<p>Curated gifts for every occasion</p>",
         "background_image": "shopify://shop_images/Untitled_5.png",
         "cta_text": "Shop Now",
@@ -25,10 +25,18 @@
         "heading": "Find the Perfect Gift",
         "subheading": "<p>Curated wellness products for every occasion</p>"
       }
+    },
+    "collection-tabs": {
+       "type":  "collection-tabs"
+    }    ,
+    "bundles": {
+       "type":  "bundles"
     }
   },
   "order": [
     "hero",
+    "collection-tabs",
+    "bundles",
     "gift_guide"
   ]
 }

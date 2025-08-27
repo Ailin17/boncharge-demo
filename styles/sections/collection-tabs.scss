@@ -1,0 +1,169 @@
+@use '../main.scss'as *;
+
+.collection-tabs {
+  font-family: $font-base;
+  background-color: black;
+  padding: 3rem 0;
+
+  .collection-slider {
+    display: flex;
+  }
+
+  &__heading {
+    font-size: 32px;
+    color: $color-white;
+    font-family: $font-heading;
+    padding: 0 1rem;
+    line-height: 1.2;
+    margin-left: 24px;
+  }
+
+  &__controls {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: $space-sm;
+    margin-bottom: $space-md;
+    flex-wrap: wrap;
+    padding: 1rem 2rem;
+  }
+
+  &__tab {
+    background: $color-neutral-200;
+    border: none;
+    border-radius: $radius-sm;
+    padding: $space-xs $space-md;
+    cursor: pointer;
+    transition: background-color 0.3s;
+
+    &--active {
+      background: $color-primary;
+      color: $color-white;
+    }
+
+    &:hover {
+      background: $color-primary-light;
+    }
+  }
+
+  &__panels {
+    margin: 0 0 0 1rem;
+
+    .collection-tabs__panel {
+      overflow: hidden;
+      display: none;
+      opacity: 0;
+      transition: max-height 0.4s ease, opacity 0.4s ease;
+
+      &--active {
+        display: block;
+        opacity: 1;
+      }
+    }
+  }
+
+
+
+
+
+  @media (min-width: 769px) {
+    padding-top: 6rem;
+
+    &__panels {
+      margin: 0;
+    }
+
+    &__inner {
+      position: relative;
+    }
+
+    &__controls {
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      grid-template-rows: 1fr;
+      max-width: 43.75rem;
+      justify-content: center;
+      margin: 0 auto;
+      padding: 1rem 3rem;
+    }
+
+    &__tab {
+      font-size: 1.25rem;
+      text-align: center;
+    }
+
+    &__heading {
+      font-size: 3rem;
+      margin: 0 auto 24px auto;
+      max-width: 1400px;
+      padding: 0 0 2rem 1.5rem;
+    }
+
+    .collection-tabs__panel {
+      max-height: none; // remove height restriction on desktop
+      opacity: 0;
+      transition: opacity 0.4s ease;
+      margin: 0 auto 0 auto;
+      max-width: 1400px;
+      position: relative;
+
+
+      &--active {
+        opacity: 1;
+      }
+    }
+  }
+
+@media (min-width: 1100px) {
+  &__tab {
+    min-width: 200px;
+  }
+}
+
+
+  .collection-slider {
+    margin-top: $space-sm;
+
+    &__nav-wrapper {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      max-width: 1500px;
+      margin: 0 auto;
+    }
+  }
+
+
+
+  .collection-slider__nav {
+
+    background: rgba($color-primary-light, 0.8);
+    color: $color-white;
+    border: none;
+    border-radius: 50%;
+    width: 2.5rem;
+    height: 2.5rem;
+    cursor: pointer;
+    font-size: 1.5rem;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s ease;
+
+    &:hover {
+      background: rgba($color-primary, 0.8);
+    }
+
+    &--prev {
+      left: -.5rem;
+    }
+
+    &--next {
+      right: 0.5rem;
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{{ 'sections.bundles.css' | asset_url | stylesheet_tag }}
+
+{% assign bundle_collection = collections.bundles %}
+
+<div class="bundles">
+  <div class="bundles__inner">
+    <h2 class="bundles__heading">Save more when you bundle.</h2>
+    <div class="bundles__collection" data-keen-slider>
+      {% for product in bundle_collection.products %}
+        <div class="bundles__slide">
+          {%
+            render 'object.product-thumbnail' with {
+            product: product
+            }
+          %}
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>

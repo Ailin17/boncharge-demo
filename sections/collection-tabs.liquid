@@ -1,0 +1,44 @@
+{{ 'sections.collection-tabs.css' | asset_url | stylesheet_tag }}
+
+{% assign collection_handles = 'beauty,sleep,recovery,wellness' | split: ',' %}
+<div class="collection-tabs" data-collection-tabs id="collection-tabs">
+  <h2 class="collection-tabs__heading">Explore the range.</h2>
+  <div class="collection-tabs__controls" data-tabs-controls>
+    {% for handle in collection_handles %}
+      {% assign collection = collections[handle] %}
+      <button
+        class="collection-tabs__tab{% if forloop.first %} collection-tabs__tab--active{% endif %}"
+        data-tab-button="{{ forloop.index0 }}"
+      >
+        {{ collection.title }}
+      </button>
+    {% endfor %}
+  </div>
+  <div class="collection-tabs__inner">
+    <div class="collection-tabs__panels">
+      {% for handle in collection_handles %}
+        {% assign collection = collections[handle] %}
+        <div
+          class="collection-tabs__panel{% if forloop.first %} collection-tabs__panel--active{% endif %}"
+          data-tab-panel="{{ forloop.index0 }}"
+        >
+          <div class="collection-slider" data-keen-slider>
+            {% for product in collection.products %}
+              <div class="collection-slider__slide keen-slider__slide">
+                {%
+                  render 'object.product-thumbnail' with {
+                  product: product
+                  }
+                %}
+              </div>
+            {% endfor %}
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+    <div class="collection-slider__nav-wrapper">
+      <button class="collection-slider__nav collection-slider__nav--prev" data-slider-prev>‹</button>
+      <button class="collection-slider__nav collection-slider__nav--next" data-slider-next>›</button>
+    </div>
+  </div>
+</div>

@@ -114,76 +114,60 @@ a:hover {
   background-color: #000000;
   color: #ffffff;
   border: none;
+  border-radius: 4px;
   padding: 0.5rem 2rem;
   cursor: pointer;
   font-weight: 600;
   transition: background-color 0.3s ease;
-  border-radius: 8px;
 }
 .product-thumbnail__button:hover {
   background-color: #4d5b50;
 }
 
-.gift-guide {
-  background: #f7f5f2;
-}
-.gift-guide__intro {
-  text-align: center;
-  margin-bottom: 4rem;
-}
-.gift-guide__intro__heading {
-  font-size: 2.5rem;
-  font-family: "Merriweather", serif;
-  color: #738678;
-  margin-bottom: 1rem;
-}
-.gift-guide__intro__subheading {
-  font-size: 1.25rem;
-  font-family: "Inter", sans-serif;
-  color: hsl(0, 0%, 20%);
-}
-.gift-guide__blocks {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 2rem;
-}
-.gift-guide__product, .gift-guide__bundle {
-  background: #ffffff;
+.bundles {
   padding: 2rem;
-  border-radius: 4px;
-  text-align: center;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  background-color: #4d5b50;
 }
-.gift-guide__product img, .gift-guide__bundle img {
-  width: 100%;
-  border-radius: 4px;
-  margin-bottom: 1rem;
+.bundles__inner {
+  max-width: 1400px;
+  margin: 0 auto;
 }
-.gift-guide__product h3, .gift-guide__bundle h3 {
-  font-family: "Merriweather", serif;
-  color: hsl(0, 0%, 20%);
-  margin-bottom: 0.5rem;
-}
-.gift-guide__product p, .gift-guide__bundle p {
-  font-family: "Inter", sans-serif;
-  color: hsl(0, 0%, 20%);
-}
-.gift-guide__quiz {
-  grid-column: 1/-1;
-  text-align: center;
-  background: #ffffff;
-  padding: 2rem;
-  border-radius: 4px;
-}
-.gift-guide__quiz-start {
-  margin-top: 1rem;
-  padding: 0.5rem 2rem;
-  background-color: #738678;
+.bundles__heading {
+  text-align: right;
+  font-size: 32px;
   color: #ffffff;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
+  font-family: "Merriweather", serif;
 }
-.gift-guide__quiz-start:hover {
-  background-color: #738678;
+.bundles__slide {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.bundles__collection {
+  display: grid;
+  grid-template-columns: minmax(400px, 1fr);
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+  align-content: center;
+  gap: 1rem;
+}
+.bundles__collection .product-thumbnail__image-wrapper {
+  padding-top: 67%;
+}
+.bundles__collection .product-thumbnail {
+  width: 100%;
+}
+@media (min-width: 769px) {
+  .bundles {
+    padding: 2rem 2rem 6rem 2rem;
+  }
+  .bundles__collection {
+    display: grid;
+    grid-template-columns: 400px 400px;
+    gap: 0;
+  }
+  .bundles__heading {
+    font-size: 3rem;
+  }
 }

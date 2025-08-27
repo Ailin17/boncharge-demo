@@ -1,0 +1,45 @@
+{% assign primary_image = product.images.first %}
+
+<div class="product-thumbnail">
+  <a href="{{ product.url }}" class="product-thumbnail__link">
+    <div class="product-thumbnail__image-wrapper">
+      {% if primary_image %}
+        <img
+          src="{{ primary_image | image_url: width: 600 }}"
+          width="400"
+          height="800"
+          alt="{{ product.title }}"
+          class="product-thumbnail__image product-thumbnail__image--primary"
+          loading="lazy"
+        >
+      {% endif %}
+
+      {% if product.images.size > 1 %}
+        {% assign hover_image = product.images[1] %}
+        <img
+          src="{{ hover_image | image_url: width: 600 }}"
+          width="400"
+          height="800"
+          alt="{{ product.title }} alternate"
+          class="product-thumbnail__image product-thumbnail__image--hover"
+          loading="lazy"
+        >
+      {% endif %}
+    </div>
+
+    <div class="product-thumbnail__info">
+      <h3 class="product-thumbnail__title">{{ product.title }}</h3>
+      <div class="product-thumbnail__pricing">
+        <span class="product-thumbnail__price">{{ product.price | money }}</span>
+        {% if product.compare_at_price > product.price %}
+          <span class="product-thumbnail__compare">{{ product.compare_at_price | money }}</span>
+        {% endif %}
+      </div>
+    </div>
+  </a>
+
+  <form action="{{ routes.cart_add_url }}" method="post" class="product-thumbnail__form">
+    <input type="hidden" name="id" value="{{ product.variants.first.id }}">
+    <button type="submit" class="product-thumbnail__button">Add to cart</button>
+  </form>
+</div>

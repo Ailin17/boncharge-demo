@@ -1,22 +1,52 @@
 {{ 'sections.hero.css' | asset_url | stylesheet_tag }}
 
 <section class="hero">
-  {%-
-    render 'tool.picture' with {
-    image: section.settings.background_image | image_url: '2048x',
-    class: 'hero__image responsive-image is-mobile',
-    width: 750,
-    sizes: '320,375,500'
-    }
-  -%}
-  <div class="hero__overlay">
-    <div class="container hero__content">
+  <div class="hero__image-container">
+    {% comment %}
+      <img
+        src="{{ section.settings.background_image | image_url: width: 500 }}"
+        width="2000"
+        height="750"
+      >
+    {% endcomment %}
+
+    <video
+      autoplay
+      muted
+      loop
+      playsinline
+      preload="metadata"
+    >
+      <source src="https://cdn.shopify.com/videos/c/o/v/6bcd3dd0b43d4fd494cde0b8ce4b50ab.mp4" type="video/mp4">
+    </video>
+    <div class="hero__overlay"></div>
+    <div class="hero__top-content">
       <h1 class="hero__heading">{{ section.settings.heading }}</h1>
-      <div class="hero__subheading">{{ section.settings.subheading }}</div>
-      {% if section.settings.cta_text != blank %}
-        <a href="{{ section.settings.cta_link }}" class="hero__cta">{{ section.settings.cta_text }}</a>
-      {% endif %}
     </div>
+  </div>
+
+  <div class="container hero__content">
+    {% if section.settings.cta_text != blank %}
+      <a href="#collection-tabs" class="hero__cta">{{ section.settings.cta_text }}</a>
+    {% endif %}
+    <div class="hero__accent">
+      <img
+        src="https://cdn.shopify.com/s/files/1/0647/2895/6976/files/wayfarer-sidenew-removebg-preview__1_-removebg-preview.png?v=1756256959"
+        width="472"
+        height="300"
+        class="hero__accent-image"
+      >
+      <span class="hero__accent-text">Up to 20% off eyewear</span>
+    </div>
+    {%-
+      render 'object.wave' with {
+      waveNumber:"1",
+      color1: '#000',
+      color2: '#000',
+      isFlipped: false
+
+      }
+    -%}
   </div>
 </section>
 

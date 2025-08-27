@@ -1,0 +1,143 @@
+@use '../main.scss'as *;
+
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  z-index: 1000;
+  z-index: 500;
+  // background: rgba(255, 255, 255, 0.01);
+  // backdrop-filter: blur(10px);
+
+}
+
+.header--sticky {
+  background: transparent;
+}
+
+.header__container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: .5rem .5rem 0 .5rem;
+}
+
+.header__logo img {
+  max-height: 40px;
+}
+
+/* Desktop nav */
+.header__nav {
+  display: none;
+}
+
+.svg-wrapper {
+  color: $color-white;
+  display: block;
+  height: 24px;
+  width: 24px;
+
+  path {
+    stroke: currentColor;
+  }
+}
+
+.header__menu {
+  display: flex;
+  gap: 1.5rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.header__menu-item a {
+  text-decoration: none;
+  color: $color-white;
+  font-weight: 500;
+}
+
+/* Toggle button */
+.header__toggle {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.header__toggle-bar {
+  width: 24px;
+  height: 2px;
+  background: $color-white;
+}
+
+/* Drawer (mobile) */
+.header__drawer {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 75%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.95);
+  padding: 2rem;
+  transition: right 0.3s ease;
+  z-index: 999;
+}
+
+.header__drawer--open {
+  right: 0;
+}
+
+.header__drawer-menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.header__drawer-item a {
+  text-decoration: none;
+  color: $color-primary;
+  font-size: 1.25rem;
+  font-weight: 500;
+}
+
+/* Show desktop nav above 768px */
+@media (min-width: 768px) {
+  .header {
+  padding: 1rem; 
+  }
+  .header__toggle {
+    display: none;
+  }
+
+  .header__nav {
+    display: block;
+  }
+
+  .header__drawer {
+    display: none;
+  }
+}
+
+/* A11y helper */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+@media (min-width: 1100px) {
+  .header {
+    padding: 1rem 2rem;
+  }
+}

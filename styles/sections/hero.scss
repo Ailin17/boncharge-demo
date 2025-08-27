@@ -1,48 +1,188 @@
-@use '../main.scss' as *;
+@use '../main.scss'as *;
 
 .hero {
   position: relative;
-  background-size: cover;
-  background-position: center;
-  padding: 6rem $space-sm;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+
+  &__image-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding-bottom: 100vh;
+
+
+    img,
+    video {
+      position: absolute;
+      inset: 0;
+      object-fit: cover;
+      height: 100%;
+      width: 100%;
+    }
+  }
 
   &__overlay {
-    background: rgba($color-black, 0.4);
-    padding: 3rem 0;
+    position: absolute;
+    bottom: 0;
+    z-index: 10;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    height: 100%;
+  }
+
+  &__top-content {
+    position: absolute;
+    top: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    padding: 2rem;
+    max-width: 800px;
+    color: $color-white;
+    z-index: 30;
+    text-align: right;
+  }
+
+  &__accent {
+    position: absolute;
+    bottom: 40px;
+    left:150px;
+    min-height: 300px;
+    display: grid;
+    align-items: center;
+    align-content: end;
+    justify-content: center;
+    // gap: 8px;
+  }
+
+  &__accent-image {
+    //     width: 50%;
+    // height: 50%;
+    height: 100px;
+    width: 200px;
+    bottom: 0;
+    display: block;
+    z-index: 30;
+    right: 0;
+    transform: rotate(15deg);
+  }
+
+  &__accent-text {
+    display: grid;
+    padding: .5rem;
+    background: $color-primary-dark;
+    z-index: 29;
+    color: $color-primary-light;
+    transform: rotate(10deg) translateX(-15px);
+    margin-top: -28px;
+    width: 200px;
+    height: 100px;
+    border-radius: 50%;
+    white-space-collapse: break-spaces; 
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+    line-height: 1.2;
+    text-transform: uppercase;
+    box-shadow: 0 0 5px black;
+
   }
 
   &__content {
-    max-width: 800px;
     margin: 0 auto;
-    text-align: center;
     color: $color-white;
     font-family: $font-base;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 20;
+    width: 100%;
   }
 
   &__heading {
     font-size: 3rem;
-    margin-bottom: $space-sm;
-    color: $color-red;
+    margin: 0;
     font-family: $font-heading;
+    text-transform: uppercase;
+    font-size: 4rem;
+    line-height: 1;
+    text-shadow: 0 1px 5px black;
   }
 
   &__subheading {
     font-size: 1.25rem;
-    color: $color-white;
+    color: $color-primary-dark;
   }
 
   &__cta {
     display: inline-block;
     margin-top: $space-lg;
-    padding: 0.75rem 2rem;
-    background-color: $color-red;
+    padding: 0.25rem 0.5rem;
+    background-color: transparent;
     color: $color-white;
     text-decoration: none;
     font-weight: bold;
     border-radius: $radius-sm;
+    z-index: 20;
+    position: absolute;
+    bottom: 2rem;
+    left: 1.5rem;
+    border: 1px solid $color-white;
+  }
 
-    &:hover {
-      background-color: darken($color-red, 10%);
+  @media (min-width: 1100px) {
+    padding-bottom: 100vh;
+
+    &__top-content {
+      padding: 2rem;
+      right: 7rem;
+      left: unset;
+      
+      transform: unset;
+      top: 6rem;
+    }
+
+    &__image-container {
+      padding-bottom: 100vh;
+    }
+
+    .o-wave {
+      height: 400px;
+    }
+
+    &__cta {
+      // top: 80px;
+      bottom:80px;
+      left: 80px;
+    }
+
+    &__heading {
+      font-size: 4rem;
+    }
+
+    &__accent {
+      height: 400px;
+      left: 15%;
+      bottom: 20%;
+
+      &-image {
+        height: 190px;
+        width: 340px;
+      }
+
+      &-text {
+        margin-top: -46px;
+      }
     }
   }
+
+@media (min-width: 1800px) {
+&__heading {
+  font-size: 7rem;
+}
+}
 }
