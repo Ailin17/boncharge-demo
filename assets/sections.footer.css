@@ -75,10 +75,10 @@ a:hover {
 .product-thumbnail__image--hover {
   opacity: 0;
 }
-.product-thumbnail:hover .product-thumbnail__image--hover {
+.product-thumbnail.has-second:hover .product-thumbnail__image--hover {
   opacity: 1;
 }
-.product-thumbnail:hover .product-thumbnail__image--primary {
+.product-thumbnail.has-second:hover .product-thumbnail__image--primary {
   opacity: 0;
 }
 .product-thumbnail__info {
@@ -114,11 +114,11 @@ a:hover {
   background-color: #000000;
   color: #ffffff;
   border: none;
-  border-radius: 4px;
   padding: 0.5rem 2rem;
   cursor: pointer;
   font-weight: 600;
   transition: background-color 0.3s ease;
+  border-radius: 8px;
 }
 .product-thumbnail__button:hover {
   background-color: #4d5b50;

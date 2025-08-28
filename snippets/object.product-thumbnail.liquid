@@ -1,7 +1,10 @@
 {% assign primary_image = product.images.first %}
 
-<div class="product-thumbnail">
-  <a href="{{ product.url }}" class="product-thumbnail__link">
+<div class="product-thumbnail {% if product.images.size > 1 %} has-second{%  endif %}">
+  <a
+    href="{{ product.url }}"
+    class="product-thumbnail__link"
+  >
     <div class="product-thumbnail__image-wrapper">
       {% if primary_image %}
         <img
@@ -29,6 +32,8 @@
 
     <div class="product-thumbnail__info">
       <h3 class="product-thumbnail__title">{{ product.title }}</h3>
+      <span>{{ product.images.size }}</span>
+
       <div class="product-thumbnail__pricing">
         <span class="product-thumbnail__price">{{ product.price | money }}</span>
         {% if product.compare_at_price > product.price %}

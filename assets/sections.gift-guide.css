@@ -75,10 +75,10 @@ a:hover {
 .product-thumbnail__image--hover {
   opacity: 0;
 }
-.product-thumbnail:hover .product-thumbnail__image--hover {
+.product-thumbnail.has-second:hover .product-thumbnail__image--hover {
   opacity: 1;
 }
-.product-thumbnail:hover .product-thumbnail__image--primary {
+.product-thumbnail.has-second:hover .product-thumbnail__image--primary {
   opacity: 0;
 }
 .product-thumbnail__info {

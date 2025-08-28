@@ -40,7 +40,7 @@
     }
   }
 
-  &:hover {
+  &.has-second:hover {
     .product-thumbnail__image--hover {
       opacity: 1;
     }
