@@ -32,8 +32,6 @@
 
     <div class="product-thumbnail__info">
       <h3 class="product-thumbnail__title">{{ product.title }}</h3>
-      <span>{{ product.images.size }}</span>
-
       <div class="product-thumbnail__pricing">
         <span class="product-thumbnail__price">{{ product.price | money }}</span>
         {% if product.compare_at_price > product.price %}
