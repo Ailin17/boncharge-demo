@@ -38,15 +38,7 @@
       >
       <span class="hero__accent-text">Up to 20% off eyewear</span>
     </div>
-    {%-
-      render 'object.wave' with {
-      waveNumber:"1",
-      color1: '#000',
-      color2: '#000',
-      isFlipped: false
-
-      }
-    -%}
+    {%- render 'object.wave', waveNumber: "1", color1: '#000', color2: '#000', isFlipped: false -%}
   </div>
 </section>
 
@@ -91,3 +83,23 @@
   ]
 }
 {% endschema %}
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: |-
+    {%-
+          render 'object.wave' with {
+          waveNumber:"1",
+          color1: '#000',
+          color2: '#000',
+          isFlipped: false
+
+          }
+        -%}
+  to: '{%- render ''object.wave'', waveNumber: "1", color1: ''#000'', color2: ''#000'',
+    isFlipped: false -%}'
+  position: 1222..1317
+{% endcomment %}

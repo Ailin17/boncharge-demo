@@ -8,13 +8,24 @@
     <div class="bundles__collection" data-keen-slider>
       {% for product in bundle_collection.products %}
         <div class="bundles__slide">
-          {%
-            render 'object.product-thumbnail' with {
-            product: product
-            }
-          %}
+          {% render 'object.product-thumbnail', product: product %}
         </div>
       {% endfor %}
     </div>
   </div>
 </div>
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: |-
+    {%
+                render 'object.product-thumbnail' with {
+                product: product
+                }
+              %}
+  to: "{% render 'object.product-thumbnail', product: product %}"
+  position: 387..444
+{% endcomment %}

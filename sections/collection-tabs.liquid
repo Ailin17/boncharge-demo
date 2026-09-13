@@ -25,11 +25,7 @@
           <div class="collection-slider" data-keen-slider>
             {% for product in collection.products %}
               <div class="collection-slider__slide keen-slider__slide">
-                {%
-                  render 'object.product-thumbnail' with {
-                  product: product
-                  }
-                %}
+                {% render 'object.product-thumbnail', product: product %}
               </div>
             {% endfor %}
           </div>
@@ -42,3 +38,18 @@
     </div>
   </div>
 </div>
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: |-
+    {%
+                      render 'object.product-thumbnail' with {
+                      product: product
+                      }
+                    %}
+  to: "{% render 'object.product-thumbnail', product: product %}"
+  position: 1235..1292
+{% endcomment %}

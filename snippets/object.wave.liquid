@@ -8,22 +8,43 @@
 {%- endcomment -%}
 
 {%- if waveNumber == "1" -%}
-  {%- render 'svg.wave-1' with {
-    color1: color1,
-    color2: color2,
-    isFlipped: isFlipped
-  } -%}
+  {%- render 'svg.wave-1', color1: color1, color2: color2, isFlipped: isFlipped -%}
 
 {% elsif waveNumber == "2" %}
-  {%- render 'svg.wave-1' with {
-    color1: color1,
-    color2: color2,
-    isFlipped: isFlipped
-  } -%} 
+  {%- render 'svg.wave-1', color1: color1, color2: color2, isFlipped: isFlipped -%} 
 {% elsif waveNumber == "3" %}
-  {%- render 'svg.wave-3' with {
-    color1: color1,
-    color2: color2,
-    isFlipped: isFlipped
-  } -%} 
-{%- endif -%}
+  {%- render 'svg.wave-3', color1: color1, color2: color2, isFlipped: isFlipped -%} 
+{%- endif -%}{%- comment -%}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: |-
+    {%- render 'svg.wave-1' with {
+        color1: color1,
+        color2: color2,
+        isFlipped: isFlipped
+      } -%}
+  to: "{%- render 'svg.wave-1', color1: color1, color2: color2, isFlipped: isFlipped
+    -%}"
+  position: 266..347
+- from: |-
+    {%- render 'svg.wave-1' with {
+        color1: color1,
+        color2: color2,
+        isFlipped: isFlipped
+      } -%}
+  to: "{%- render 'svg.wave-1', color1: color1, color2: color2, isFlipped: isFlipped
+    -%}"
+  position: 381..462
+- from: |-
+    {%- render 'svg.wave-3' with {
+        color1: color1,
+        color2: color2,
+        isFlipped: isFlipped
+      } -%}
+  to: "{%- render 'svg.wave-3', color1: color1, color2: color2, isFlipped: isFlipped
+    -%}"
+  position: 496..577
+{%- endcomment -%}
